@@ -1,0 +1,24 @@
+.is--linkBox {
+	position: relative;
+	display: block;
+	color: inherit;
+	pointer-events: auto;
+	text-decoration: none;
+	cursor: pointer;
+	isolation: isolate; // 内部のz-index順位と外部のz-indexを混同させない。
+
+	// text-decoration: none;
+
+	// :where(&:not(a)) > * {
+	// 	pointer-events: none;
+	// 	position: relative;
+	// 	z-index: 1;
+	// }
+
+	// リンク を全てクリック可能にしておく
+	:where(&) a {
+		pointer-events: auto; // カードメディア内のタグラベルをクリックできるようにする場合などに必要
+		position: relative; // isolation: isolate;
+		z-index: 1;
+	}
+}

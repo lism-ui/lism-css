@@ -1,0 +1,34 @@
+---
+title: 1カラムレイアウト
+description: 1カラムレイアウトの実装例を紹介します。
+sidebar:
+  order: 1
+---
+
+import { Lism } from 'lism-css/astro';
+import { Preview, PreviewArea, PreviewTitle, PreviewCode, PreviewFrame } from "~/components";
+
+Lismで1カラムページの全体レイアウトを組む場合の例を紹介します。
+
+<Preview>
+	<PreviewTitle>コード</PreviewTitle>
+	<PreviewCode>
+	```jsx
+	<body>
+		<Stack id='wrap' minH='100vh'>
+			<_Header_ />
+			<Box tag='main' py='60' fx='1'>
+				<Container size='m' hasGutter isFlow>
+					<_Content_ />
+				</Container>
+			</Box>
+			<_Footer_ />
+		</Stack>
+	</body>
+	```
+	</PreviewCode>
+</Preview>
+
+<PreviewTitle>プレビュー</PreviewTitle>
+<PreviewFrame url='/demo/page-layout/one-column/' />
+

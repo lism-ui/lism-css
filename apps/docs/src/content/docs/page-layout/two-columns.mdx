@@ -1,0 +1,40 @@
+---
+title: 2カラムレイアウト
+description: 2カラムレイアウトの実装例を紹介します。
+sidebar:
+  order: 2
+---
+
+import { Lism, Box } from 'lism-css/astro';
+import { Preview, PreviewArea, PreviewTitle, PreviewCode, PreviewFrame } from "~/components";
+
+
+Lismで2カラムページの全体レイアウトを組む場合の例を紹介します。
+
+<Preview>
+	<PreviewTitle>コード</PreviewTitle>
+	<PreviewCode>
+	```jsx
+	<body>
+		<Stack id='wrap' minH='100vh'>
+			<_Header_ />
+			<Container hasGutter size='m' py='50' fx='1'>
+				<WithSide sideW='240px' minW='40em' g='50'>
+					<main class="is--container">
+						<_Contents_ />
+					</main>
+					<aside data-is-side class='is--container is--flow'>
+						<div>Sidebar contents...</div>
+					</aside>
+				</WithSide>
+			</Container>
+			<_Footer_ />
+		</Stack>
+	</body>
+	```
+	</PreviewCode>
+</Preview>
+
+<PreviewTitle>プレビュー</PreviewTitle>
+<PreviewFrame url='/demo/page-layout/two-columns/' />
+

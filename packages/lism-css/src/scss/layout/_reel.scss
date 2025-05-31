@@ -1,0 +1,17 @@
+// .l--reel {
+// 	--p: 0;
+// 	--item-size: var(--size--xs);
+// 	--unreel-gtc: repeat(auto-fit, minmax(min(var(--item-size), 100%), 1fr));
+
+// 	display: flex;
+// 	overflow: auto;
+// 	scroll-snap-type: var(--snapType, both mandatory);
+// 	scroll-behavior: smooth; // idリンクでスクロールされるように
+// 	scroll-padding: var(--p); // paddingと合わせる
+
+// 	> * {
+// 		flex: 0 0 var(--item-size);
+// 		scroll-snap-align: var(--snapAlign, start);
+// 		scroll-snap-stop: var(--snapStop, normal); //always
+// 	}
+// }
