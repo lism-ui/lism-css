@@ -3,7 +3,7 @@
 }
 // 画面サイズ小さめの時に目次サイドバーがはみ出す問題への対処。
 // div.code がくるのは １列のコードの時だけ？ width:0 にしても特にコード表示に問題はなかった。
-.expressive-code .ec-line div.code {
+.expressive-code pre > code > .ec-line:first-child div.code {
 	width: 0;
 	&::after {
 		content: '';

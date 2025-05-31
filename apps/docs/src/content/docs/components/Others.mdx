@@ -134,3 +134,90 @@ import ShapeDivider from '~/components/ex/ShapeDivider/index.astro';
 </Preview>
 
 ---
+
+
+
+## 独自ユーティリティクラスの作成例
+
+Lismのパッケージ内で用意しているクラスはありませんが、いくつか独自のユーティリティクラスを用意してそれを呼び出す例を紹介します。
+
+[ユーティリティクラスとして強制出力する方法](/components/lism#output-utility)を活用します。
+
+
+<Preview>
+	<PreviewTitle>stripe</PreviewTitle>
+	<PreviewArea resize nogrid p='30'>
+		<Box bg='u:stripe' p='40'>
+			<Dummy />
+		</Box>
+		<Box bg='u:stripe' p='40' className='u--colbox' keycol='blue'>
+			<Dummy />
+		</Box>
+	</PreviewArea>
+	<PreviewCode label='CSS' slot='tab'>
+```css
+.-bg\:stripe {
+	--stripe-bdc: color-mix(in srgb, currentColor, transparent 94%);
+	--stripe-bdw: 1px;
+	--stripe-deg: -40deg;
+	--stripe-interval: 6px;
+	background-image: repeating-linear-gradient(
+		var(--stripe-deg),
+		var(--stripe-bdc),
+		var(--stripe-bdc) var(--stripe-bdw),
+		transparent var(--stripe-bdw),
+		transparent var(--stripe-interval)
+	);
+
+	background-position: center;
+}
+```
+	</PreviewCode>
+		<PreviewCode label='JSX' slot='tab'>
+		```jsx "bg='u:stripe'"
+		<Box bg='u:stripe' p='40'>
+			<Dummy />
+		</Box>
+		<Box bg='u:stripe' p='40' className='u--colbox' keycol='blue'>
+			<Dummy />
+		</Box>
+		```
+	</PreviewCode>
+	<PreviewCode label='HTML' slot='tab'>
+		```html "-bg:stripe"
+		<div class="l--box -bg:stripe -p:40">
+			<p>...</p>
+		</div>
+		<div class="l--box u--colbox -bg:stripe -p:40 -keycol:blue">
+			<p>...</p>
+		</div>
+		```
+	</PreviewCode>
+</Preview>
+
+
+<Preview>
+	<PreviewTitle>`bg="u:sunset"`</PreviewTitle>
+	<PreviewArea resize p='20'>
+		<Frame ar='16/9' bg='u:sunset'/>
+	</PreviewArea>
+
+	<PreviewCode label='CSS' slot='tab'>
+	```css
+	.-bg\:sunset{
+		background: linear-bg(to top, #ddb672 5%, #e67a44 60%, #d16834 95%);
+	}
+	```
+	</PreviewCode>
+	<PreviewCode label='JSX' slot='tab'>
+		```jsx "bg='u:sunset'"
+		<Frame ar='16/9' bg='u:sunset'/>
+		```
+	</PreviewCode>
+	<PreviewCode label='HTML' slot='tab'>
+		```jsx "-bg:sunset"
+		<div class="l--frame -ar:16/9 -bg:sunset"></div>
+		```
+	</PreviewCode>
+</Preview>
+

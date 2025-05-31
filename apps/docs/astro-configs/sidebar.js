@@ -77,18 +77,6 @@ export default [
 				label: 'LinkBox',
 				link: '/components/linkbox/',
 			},
-			{
-				label: 'props',
-				link: '###---',
-			},
-			{
-				label: 'CSS Props',
-				link: '/components/props/css-props/',
-			},
-			{
-				label: 'Responsive Props',
-				link: '/components/props/responsive-props/',
-			},
 			// {
 			// 	label: 'getLismProps()',
 			// 	link: '/props/get-lism-props/',
